@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú | Restaurante Cambiaso</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <h2>Garlic Burguer´s</h2>
+        <ul>
+            <li><a href="index.html">INICIO</a></li>
+            <li><a href="#">MENU</a></li>
+            <li><a href="#">SOBRE NOSOTROS</a></li>
+            <li><a href="#">CONTACTO</a></li>
+            <li>
+                <a href="#" id="ver-carrito">🛒 <span id="contador-carrito">0</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="menu">
+        <h2 class="h2-menu">Nuestro menú</h2>
+        <p>Hacé clic en un plato para pedir</p>
+
+        <div id="contenedor-menu" class="menu-container"></div>
+    </section>
+
+    <div id="modalPlato" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModal()">&times;</span>
+            <img id="modalImg" src="" alt="Plato">
+            <div class="modal-info">
+                <h2 id="modalTitulo">Nombre del Plato</h2>
+                <p id="modalDesc">Descripción...</p>
+                <h3 id="modalPrecio" class="precio">$0</h3>
+                <a href="#" id="modalBtnPedido" class="btn-pedido" target="_blank">Pedir por Delivery</a> 
+            </div>
+        </div>
+    </div>
+
+    <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="cerrarModalCarrito()">&times;</span>
+            <div class="modal-info" style="width: 100%;">
+                <h2 style="margin-left: 0;">Tu Pedido</h2>
+                <div id="lista-carrito" style="width: 100%; margin-top: 20px; max-height: 300px; overflow-y: auto;">
+                    </div>
+                <hr style="width: 100%; border: 0.5px solid #ff4757; margin: 20px 0;">
+                <h3 id="total-carrito" class="precio">Total: $0</h3>
+                <button onclick="finalizarPedido()" class="btn-pedido" style="width: 100%; margin-top: 20px;">
+                    CONFIRMAR PEDIDO POR WHATSAPP
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Restaurante Cambiaso</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

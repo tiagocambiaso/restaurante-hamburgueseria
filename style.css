@@ -1,0 +1,290 @@
+/* =========================================
+   1. RESET Y ESTILOS GENERALES
+   ========================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Oswald', sans-serif;
+    background-color: #050505;
+    color: white;
+    overflow-x: hidden;
+}
+
+/* =========================================
+   2. NAVEGACIÓN (ESTILO INDUSTRIAL)
+   ========================================= */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 30px 0;
+}
+
+h2 {
+    margin-left: 3rem;
+    color: #FBB03B;
+    text-transform: uppercase;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    font-weight: 700;
+}
+
+ul {
+    display: flex;
+    gap: 3rem;
+    list-style: none;
+    margin-right: 3rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #FBB03B;
+}
+
+/* =========================================
+   3. HERO (IMPACTO VISUAL)
+   ========================================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.9)), url('photo-1552566626-52f8b828add9.avif');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: clamp(3.5rem, 12vw, 7.5rem);
+    font-weight: 700;
+    line-height: 0.9;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: -3px;
+}
+
+.hero p {
+    font-size: 1.1rem;
+    letter-spacing: 8px;
+    margin-bottom: 40px;
+    color: rgba(255,255,255,0.7);
+    text-transform: uppercase;
+}
+
+.boton-reserva {
+    text-decoration: none;
+    background-color: #FBB03B;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 20px 45px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    border-radius: 0;
+}
+
+.boton-reserva:hover {
+    background-color: white;
+    transform: scale(1.05) rotate(-2deg);
+}
+
+/* =========================================
+   4. SECCIÓN MENÚ (FONDO CORREGIDO)
+   ========================================= */
+.menu {
+    min-height: 100vh;
+    padding: 120px 20px; 
+    /* Recuperamos la imagen de fondo con overlay oscuro */
+    background-image: linear-gradient(rgba(5, 5, 5, 0.85), rgba(5, 5, 5, 0.85)), url('photo-1552566626-52f8b828add9.avif');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    text-align: center;
+}
+
+.h2-menu {
+    font-size: 4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+    margin-bottom: 50px;
+}
+
+.menu-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.plato {
+    background-color: rgba(0,0,0,0.8);
+    border-radius: 0; 
+    overflow: hidden;
+    width: 350px;
+    border: 1px solid rgba(255,255,255,0.05);
+    transition: all 0.4s ease;
+}
+
+.plato:hover {
+    transform: translateY(-10px);
+    border-color: #FBB03B;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.plato img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(20%);
+    transition: 0.5s;
+}
+
+.plato:hover img {
+    filter: grayscale(0%) contrast(1.1);
+}
+
+.plato h3 {
+    margin: 20px 0 10px 0;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.precio-card {
+    color: #FBB03B;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+/* =========================================
+   5. MODAL Y BOTONES (CORREGIDO)
+   ========================================= */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #0a0a0a;
+    width: 95%;
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    position: relative;
+    border: 1px solid rgba(251, 176, 59, 0.3);
+    border-radius: 0;
+}
+
+#modalImg {
+    width: 55%;
+    height: 550px;
+    object-fit: cover;
+}
+
+.modal-info {
+    width: 45%;
+    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.precio {
+    color: #FBB03B;
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+/* Botones dentro del modal */
+.btn-pedido, .btn-agregar {
+    width: 100%;
+    padding: 20px;
+    background-color: #FBB03B;
+    color: black;
+    border: none;
+    border-radius: 0;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.btn-pedido:hover, .btn-agregar:hover {
+    background-color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 40px;
+    color: #FBB03B;
+    cursor: pointer;
+    z-index: 2100;
+    line-height: 0.8;
+}
+
+/* =========================================
+   6. RESPONSIVE
+   ========================================= */
+@media (max-width: 768px) {
+    nav { background-color: #000; padding: 20px; }
+    h2 { margin-left: 0; font-size: 1.5rem; text-align: center; width: 100%; }
+    ul { display: none; }
+    .hero h1 { font-size: 3.5rem; letter-spacing: -1px; }
+    .modal-content { flex-direction: column; }
+    #modalImg, .modal-info { width: 100%; height: auto; }
+    #modalImg { height: 300px; }
+}
+
+/* =========================================
+   7. FOOTER
+   ========================================= */
+footer {
+    background-color: #050505;
+    color: #666;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #111;
+}
